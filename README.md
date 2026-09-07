@@ -52,6 +52,7 @@ When an agent queries a farm plot's status during peak season, PhyState evaluate
 * **Supported State (`NDVI > 0.65`):** Optical imagery confirms dense active vegetation (deep green), verified against expected temporal growth curves.
 * **Conflicted State (`NDVI < 0.25`):** Optical imagery reveals severe drought, stress, or bare soil (yellow/red), directly contradicting a "healthy crop" claim.
 <img width="421" height="237" alt="image" src="https://github.com/user-attachments/assets/3cbc3f9a-8637-4dec-994e-050069fa3b8a" />
+
 Sentinel-2 Optical NDVI Vegetation Analysis. Source: EO4GEO. Source: EO4GEO
 ---
 
