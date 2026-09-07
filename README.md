@@ -1,3 +1,7 @@
+Here is the updated **`README.md`** with the explicit satellite image embeds and proper EO4GEO source attribution integrated into the multi-sensor section.
+
+---
+
 # PhyState: Physical Reality Assurance Engine
 
 ---
@@ -39,7 +43,26 @@ PhyState intercepts proposed agent actions, parses required physical state assum
 
 ---
 
-## 🚦 Decision State Protocol
+## 🖼️ Multi-Sensor Evidence & Satellite Ground Truth
+
+PhyState ingests optical and radar satellite feeds to cross-examine digital agent claims against ground reality. Below is how multi-sensor divergence translates into deterministic decision states:
+
+### Scenario A: Crop Vigor & Phenology Verification
+
+When an agent queries a farm plot's status during peak season, PhyState evaluates both **Sentinel-2 Optical NDVI** (vegetation health) and **Sentinel-1 SAR Backscatter** (canopy structure density).
+
+* **Supported State (`NDVI > 0.65`):** Optical imagery confirms dense active vegetation (deep green), verified against expected temporal growth curves.
+* **Conflicted State (`NDVI < 0.25`):** Optical imagery reveals severe drought, stress, or bare soil (yellow/red), directly contradicting a "healthy crop" claim.
+
+---
+
+### Scenario B: Cloud Penetration via Synthetic Aperture Radar (SAR)
+
+Optical sensors cannot penetrate heavy cloud cover ($>80\%$). When optical feeds are obstructed, PhyState routes evidence reconciliation through **Sentinel-1 C-band SAR** backscatter, measuring surface roughness and canopy structure independent of illumination or weather.
+
+---
+
+## 🚦 Decision State Protocol & Output Payload
 
 PhyState enforces strict deterministic guardrails to evaluate physical claims:
 
@@ -48,6 +71,30 @@ PhyState enforces strict deterministic guardrails to evaluate physical claims:
 |  | Multi-sensor physical evidence confirms required physical assumptions within confidence thresholds. | **PROCEED:** Agent executes proposed transaction. |
 |  | Independent physical evidence directly contradicts the claim (e.g., bare soil during peak season). | **FLAG:** Transaction blocked; escalated to risk officer. |
 |  | Cloud obstruction ($>80\%$), stale sensor latency ($>20\text{ days}$), or high signal noise. | **ABSTAIN:** Action halted due to physical uncertainty. |
+
+### Sample Engine Output Payload
+
+When an autonomous AI agent queries PhyState via API, the engine returns a structured **Assurance Object**:
+
+```json
+{
+  "claim_id": "CLM-2026-8891",
+  "asset_id": "FARM-KE-4022",
+  "decision_state": "CONFLICTED",
+  "confidence_score": 0.942,
+  "reconciliation_log": {
+    "optical_ndvi": 0.21,
+    "sar_vv_vh_ratio": -21.8,
+    "cloud_cover_pct": 14.5,
+    "sensor_latency_days": 1.2,
+    "flags": [
+      "DISCREPANCY: Claimed active crop growth, but NDVI (0.21) indicates bare soil.",
+      "SAR backscatter confirms absence of canopy structure."
+    ]
+  }
+}
+
+```
 
 ---
 
@@ -81,7 +128,7 @@ The Phase 1 synthetic validation suite evaluates multi-sensor phenology divergen
 ```text
 PhyState/
 ├── .gitignore             # Production Git ignore rules
-├── README.md              # System Architecture & Documentation
+├── README.md              # System Architecture & Visual Documentation
 ├── requirements.txt       # Dependencies (NumPy, Scikit-Learn, Tabulate)
 └── src/
     ├── __init__.py        # Module initialization
@@ -170,4 +217,3 @@ if assurance_object["decision_state"] == "SUPPORTED":
 This project is open-source under the **MIT License**.
 
 ---
-
