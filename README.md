@@ -1,5 +1,3 @@
-Here is the updated **`README.md`** with the explicit satellite image embeds and proper EO4GEO source attribution integrated into the multi-sensor section.
-
 ---
 
 # PhyState: Physical Reality Assurance Engine
