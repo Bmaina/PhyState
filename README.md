@@ -56,10 +56,11 @@ Sentinel-2 Optical NDVI Vegetation Analysis. Source: EO4GEO. Source: EO4GEO
 ---
 
 ### Scenario B: Cloud Penetration via Synthetic Aperture Radar (SAR)
+Optical sensors cannot penetrate heavy cloud cover ($>80\%$). When optical feeds are obstructed, PhyState routes evidence reconciliation through Sentinel-1 C-band SAR backscatter, measuring surface roughness and canopy structure independent of illumination or weather.
 
-Optical sensors cannot penetrate heavy cloud cover ($>80\%$). When optical feeds are obstructed, PhyState routes evidence reconciliation through **Sentinel-1 C-band SAR** backscatter, measuring surface roughness and canopy structure independent of illumination or weather.
-<img width="400" height="250" alt="image" src="https://github.com/user-attachments/assets/99773e41-0487-4b9b-bdff-d265e01ffd00" />
-Sentinel-1 SAR C-Band Radar Backscatter Feed. Source: STEP Forum
+<img width="400" height="250" alt="image" src="https://github.com/user-attachments/assets/a103bf51-d6ba-4b25-bd7f-96bd39148f37" />
+
+**Sentinel-1 SAR C-Band Radar Backscatter Feed. Source: STEP Forum**
 ---
 
 ## 🚦 Decision State Protocol & Output Payload
