@@ -119,7 +119,7 @@ The Phase 1 synthetic validation suite evaluates multi-sensor phenology divergen
 | UNDERDETERMINED_SENSOR_LATENCY  | UNDERDETERMINED  | 100% Match       |
 +─────────────────────────────────+──────────────────+──────────────────+
 
-[Validation Metric] Multi-Sensor Separation Macro ROC-AUC: 1.0000
+[Validation Metric] Multi-Sensor Separation Macro as a synthetic logic test
 
 ```
 
