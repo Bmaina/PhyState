@@ -148,7 +148,7 @@ PhyState/
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/PhyState.git
+git clone https://github.com/Bmaina/PhyState.git
 cd PhyState
 
 # Install dependencies
